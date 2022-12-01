@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <script type="text/javascript">
+        var index=0;
+        //效果
+        function ChangeImg() {
+            index++;
+            var a=document.getElementsByClassName("img-slide");
+            if(index>=a.length) index=0;
+            for(var i=0;i<a.length;i++){
+                a[i].style.display='none';
+            }
+            a[index].style.display='block';
+        }
+        
+        setInterval(ChangeImg,3000);
+    </script> -->
+    <!-- <script src="echarts.js"></script> -->
+    <style>
+        body{
+            background-color: rgb(243, 243, 243);
+        }
+    .top{
+        width: 100%;
+        height: 100px;
+       background-color: white;
+    }
+    .left{
+        width: 100px;
+        height: 30px;
+        background-color: rgb(211, 57, 57);
+        float: left;
+        margin-left: 100px;
+        margin-top: 30px;
+        text-align: center;
+        color: white;
+        line-height: 30px;
+       
+    }
+    .right span{
+        width: 100px;
+        height: 30px;
+        background-color: rgb(211, 57, 57);
+        float: right;
+        margin-right: 100px;
+        margin-top: 30px;
+        text-align: center;
+        color: white;
+        line-height: 30px;
+    }
+    .nav{
+        width: 100%;
+        height: 100px;
+        padding-top: 20px;
+
+    }
+    .left1{
+        width: 300px;
+        height: 100px;
+        
+        float: left;
+        margin-left: 130px;
+      
+       
+      
+
+    }
+    .left1 span{
+        text-align: center;
+        color: black;
+        font-size: 25px;
+      
+
+    }
+    .left1 a{
+        color: gray;
+        font-size: 13px;
+    }
+    .right1{
+        width: 800px;
+        height: 100px;
+        
+       
+        float: right;
+    }
+    .right1 a{
+        color: black;
+        text-align: center;
+        text-decoration: none;
+        line-height: 130px;
+        font-size: 15px;
+        margin-left: 40px;
+        font-weight: 700;
+    }
+    .right1 a:hover{
+      
+        width: 160px;
+        height: 20px;
+        text-decoration: underline;
+    }
+    .center{
+        width: 950px;
+        height: 150px;
+        /* padding-top: 40px; */
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        /* background-color: pink; */
+    }
+    .imgList{ 
+        width: 350px;
+        height: 150px;
+        /* background-color: orange; */
+        float: left;
+        margin-top: -1px;
+        position: absolute;
+    
+    }
+    .imgList img{
+            width: 350px;
+            height: 150px;
+            
+
+        }
+        /* .imgList{
+            
+        } */
+
+        .imgList li{
+            
+            list-style: disc;
+        }
+
+        .circle{
+            position:absolute; 
+            /* bottom: 5px; */
+            transform: translateX(-50%);
+        }
+        .circle a{
+            width: 15px;
+            height: 15px;
+            background-color: green;
+            border-radius: 50%;
+            opacity: .8;
+            cursor: pointer;
+        }
+        .circle a.hover{
+            background: black;
+            opacity: .7;
+        }
+    .t{
+        float: right;
+        width: 550px;
+        height: 150px;
+        background-color: white;
+    }
+    .t1{
+        width: 550px;
+        height: 50px;
+      
+        float: right;
+    }
+    .t1 span{
+        line-height: 50px;
+        float: left;
+        margin-left: 30px;
+    }
+    #tt{
+      line-height: 30px;
+      width: 80px;
+      float: right;
+      margin-right: 30px;
+      margin-top: 10px;
+    }
+    #tt input{
+        height: 30px;
+    }
+    .t2{
+        width: 550px;
+        height: 100px;
+        float: right;
+       
+
+    }
+    .t2 table{
+        margin-left: 30px;
+        width: 400px;
+        height: 90px;
+        
+    }
+    #tt2{
+        width: 60px;
+        height: 25px;
+        background-color: rgb(120, 247, 36);
+        text-align: center;
+        
+        
+    }
+    #tt2 a{
+        text-decoration: none;
+        color: white;
+    }
+    .center2{
+        width: 950px;
+        height: 400px;
+        
+        margin: 0 auto;
+    }
+    .b1{
+        width: 950px;
+        height: 80px;
+       text-align: center;
+      
+        line-height: 80px;
+        /* margin: 0 auto; */
+    }
+    #b2{
+        width: 950px;
+        height: 320px;
+        background-color: rgb(134, 183, 247);
+        background-image: url(150.png);
+        background-repeat: repeat;
+       
+    }
+    .center3{
+        width: 950px;
+        height: 300px;
+       padding-top: 10px;
+        margin: 0 auto;
+    }
+    .l1{
+        width: 470px;
+        height: 300px;
+        background-color:white;
+        float: left;
+        background-image: url(p2.jpg);
+        background-repeat: repeat;
+    }
+    .r1{
+        width: 470px;
+        height: 300px;
+        background-color: white;
+        float: right;
+        background-image: url(p4.jpg);
+        background-repeat: repeat;
+    }
+    .bottom{
+        width: 100%;
+        height: 200px;
+        background-color: rgb(43, 42, 42);
+        margin-top: 30px;
+    }
+    .g{
+        width: 1000px;
+        height: 200px;
+        margin: 0 auto;
+    }
+    .l2{
+        width: 300px;
+        height: 200px;
+        float: left;
+    }
+    .l2 table{
+        height: 30px;
+        width: 50px;
+        float: right;
+        background-color: rgb(211, 57, 57);
+        margin-top: 50px;
+    }
+    .g1{
+        width: 700px;
+        height: 200px;
+        color: white;
+        float: right;
+        
+    }
+    .g1 table{
+        width: 500px;
+        height: 180px;
+        margin-left: 80px;
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="top">
+        <div class="left">
+         LOGO
+        </div>
+        <div class="right">
+          
+          <span>Logo Out</span>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="left1">
+            <span>AUdience Overview</span><br>
+            <a>Roseville,CA</a>
+        </div>
+        <div class="right1">
+            <a href="#">DASHBOARO</a>
+            <a href="#">PROJECTS</a>
+            <a href="#">CALENDAR</a>
+            <a href="#">MAILBOX</a>
+            <a href="#">SETTINGS</a>
+        </div>
+    </div>
+    <div class="center">
+        <ul class="imgList">
+        <li><img src="350x150.png" alt=""></li>
+        <li><img src="w5.ipg" alt=""></li>
+        <li><img src="w6.jpg" alt=""></li>
+        </ul>
+        <div class="circle"> </div>
+        <div class="t">
+            <div class="t1">
+                <span>Support Request</span>
+                <span id="tt">
+                    <input type="button" value="View All">
+                   
+                </span>
+            </div><hr>
+            <div class="t2">
+                <table>
+                    <tr>
+                        <th>TIME</th>
+                        <th rowspan="3"></th>
+                        <th>USER NAME</th>
+                        <th rowspan="3"></th>
+                        <th rowspan="3"></th>
+                        <th>STATUS</th>
+                    </tr>
+                    <tr>
+                        <td>9.45pm</td>
+                        <td>info@design.com</td>
+                   
+                        <td id="tt2"><a href="#">solved</a></td>
+                    </tr>
+                    <tr>
+                        <td>9.45pm</td>
+                        <td>info@design.com</td>
+                   
+                        <td id="tt2"><a href="#">solved</a></td>
+                     </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="center2">
+      <div class="b1">曲线图数据展示</div>
+      <div id="b2" style="  width: 950px;
+      height: 320px;"> </div>
+      <!-- <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+  
+        // 指定图表的配置项和数据
+        var option = {
+          title: {
+            text: 'ECharts 入门示例'
+          },
+          tooltip: {},
+          legend: {
+            data: ['销量']
+          },
+          xAxis: {
+            data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+          },
+          yAxis: {},
+          series: [
+            {
+              name: '销量',
+              type: 'bar',
+              data: [5, 20, 36, 10, 10, 20]
+            }
+          ]
+        };
+  
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+      </script> -->
+    </div>
+    <div class="center3">
+        <div class="l1">
+            
+            <img src="" alt="">
+        </div>
+        <div class="r1">
+                
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="g">
+            <div class="l2">
+            <table>
+                    <tr><td>LOGO</td></tr>
+             </table>
+            </div>  
+            <div class="g1">
+                    <table>
+                        <tr>
+                            <td>NEWS</td>
+                            <td>SPORT</td>
+                            <td>WEATHER</td>
+                            <td>FUTURE</td>
+                            <td>TRAVEL</td>
+                        </tr>
+                        <tr>
+                            <td>CHANNELS</td>
+                            <td>CULTURE</td>
+                            <td>AUTOS</td>
+                            <td>FOOD</td>
+                            <td>RADIO</td>
+                        </tr>
+                        <tr>
+                                <td>OVERVIEW</td>
+                                 <td>NATURE</td>
+                                <td>LOCAL</td>
+                                <td>EARTH</td>
+                                <td rowspan="2"></td>
+                         </tr>
+                         <tr>
+                                <td>TIMELINE</td>
+                                <td>MUSIC</td>
+                                <td>SHOP</td>
+                                <td>TV</td>
+                          </tr>
+                    </table>
+                </div>
+        </div>
+    </div>
+    
+ 
+ 
+ 
+ 
+    <script type="text/javascript">
+        var imgList = document.querySelector('.imgList');
+        var circle = document.querySelector('.circle');
+        var circleA = circle.children;
+        var imgListli = imgList.children;
+        var thisIndex = 0;
+        var flag = true;
+ 
+        window.onload = function() {
+ 
+            imgList.style.width = imgList.children.length * 620 + 'px';
+ 
+            autoChange();
+ 
+            for (var i = 0; i < imgList.children.length; i++) {
+                var aNode = document.createElement('a');
+                aNode.setAttribute('index', i);
+                circle.appendChild(aNode);
+            }
+ 
+            circle.addEventListener('click', function(e) {
+                if (e.target.nodeName != 'A') {
+                    return false;
+                }
+ 
+                if (flag) {
+                    flag = false;
+                    var thisIndex = e.target.getAttribute('index');
+                    tIndex = e.target.getAttribute('index') * 1 + 1;
+                    slow(imgList, -thisIndex * 620, function() {
+                        flag = true;
+                    });
+                    circlechange(thisIndex);
+                }
+ 
+            })
+            var tIndex = 1;
+ 
+            function autoChange() {
+ 
+                setInterval(function() {
+                    if (flag) {
+                        flag = false;
+                        if (tIndex >= imgListli.length) {
+                            tIndex = 0;
+                        }
+                        slow(imgList, -tIndex * 620, function() {
+                            flag = true;
+                        });
+                        circlechange(tIndex);
+                        tIndex++;
+                    }
+                }, 3000)
+ 
+            }
+ 
+            function circlechange(t) {
+                for (var i = 0; i < circleA.length; i++) {
+                    circleA[i].className = '';
+                }
+                circleA[t].className = 'hover';
+            }
+ 
+            function slow(obj, target, getflag) {
+                obj.myInter = setInterval(function() {
+                    var offsetLeft = obj.offsetLeft;
+                    var num = (target - offsetLeft) / 10;
+                    num > 0 ? num = Math.ceil(num) : num = Math.floor(num);
+                    if (offsetLeft == target) {
+                        clearInterval(obj.myInter);
+                        getflag && getflag();
+                    } else {
+                        obj.style.left = offsetLeft + num + 'px';
+                    }
+                }, 10)
+            }
+ 
+        }
+    </script>
+ 
+</body>
+ 
+</html>
+</body>
+
+
+</html>
